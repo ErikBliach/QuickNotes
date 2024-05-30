@@ -11,7 +11,7 @@ public class App {
         //Initializing aspects of starting window
         JFrame quickNotes = new JFrame("QuickNotes");
         JLabel label = new JLabel("Open a new note with the button.", SwingConstants.CENTER);
-        JButton openNote = new JButton();
+        JButton openNote = new JButton("Note");
         JPanel panel = new JPanel();
 
         //configurations for
