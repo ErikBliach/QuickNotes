@@ -15,7 +15,7 @@ public class App {
         JButton noteButton = new JButton("Note");
         JPanel panel = new JPanel();
 
-        //configurations for frame
+        //configurations for frame of window to open a note
         quickNotes.setResizable(false);
         quickNotes.add(panel);
         quickNotes.setSize(300, 150);
