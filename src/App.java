@@ -8,23 +8,25 @@ public class App {
 
         //Initializing aspects of starting window
         JFrame quickNotes = new JFrame("QuickNotes");
-        JLabel label = new JLabel("<html>Welcome to QuickNotes!<p>Open a new note with the New note button.<p>Check your saved notes with the Saved notes button.</html>", SwingConstants.CENTER);//<html> and <p> allow the text to be shown on multiple lines
+        JLabel label = new JLabel("<html>Welcome to QuickNotes!<p>Open a new note with the New note button.<p>Check your currently saved note with the Saved note button.</html>", SwingConstants.CENTER);//<html> and <p> allow the text to be shown on multiple lines
         JButton noteButton = new JButton("New note");
-        JButton savedNotes = new JButton("Saved notes");
+        JButton savedNote = new JButton("Saved note");
         JPanel panel = new JPanel(new BorderLayout());
         JPanel labelPanel = new JPanel();
         JPanel buttonPanel = new JPanel();
 
         //configurations for frame of window to open a note
+        quickNotes.pack();
+        quickNotes.setLocationRelativeTo(null);
         quickNotes.setResizable(false);
         quickNotes.add(panel);
-        quickNotes.setSize(350, 150);
+        quickNotes.setSize(380, 150);
         quickNotes.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         quickNotes.setVisible(true);
 
         //placing buttons and labels in their own panels to change their layout in the frame
         buttonPanel.add(noteButton);
-        buttonPanel.add(savedNotes);
+        buttonPanel.add(savedNote);
         labelPanel.add(label);
 
         //positions for panels within frame
