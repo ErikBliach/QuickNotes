@@ -10,10 +10,11 @@ public class App {
         JFrame quickNotes = new JFrame("QuickNotes");
         JLabel label = new JLabel("<html>Welcome to QuickNotes!<p>Open a new note with the New note button.<p>Check your currently saved note with the Saved note button.</html>", SwingConstants.CENTER);//<html> and <p> allow the text to be shown on multiple lines
         JButton noteButton = new JButton("New note");
-        JButton savedNote = new JButton("Saved note");
+        JButton savedNoteButton = new JButton("Saved note");
         JPanel panel = new JPanel(new BorderLayout());
         JPanel labelPanel = new JPanel();
         JPanel buttonPanel = new JPanel();
+        quickNote newNote = new quickNote();
 
         //configurations for frame of window to open a note
         quickNotes.pack();
@@ -26,7 +27,7 @@ public class App {
 
         //placing buttons and labels in their own panels to change their layout in the frame
         buttonPanel.add(noteButton);
-        buttonPanel.add(savedNote);
+        buttonPanel.add(savedNoteButton);
         labelPanel.add(label);
 
         //positions for panels within frame
@@ -37,8 +38,14 @@ public class App {
         //to open a new note whenever the button is pressed
         noteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                quickNote newNote = new quickNote();
                 newNote.newNote();
+            }
+        });
+
+        savedNoteButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                newNote.newNote();
+                newNote.textArea.append(newNote.savedNote);
             }
         });
     }

@@ -5,12 +5,14 @@ import javax.swing.*;
 import java.util.Random;
 
 public class quickNote {
+    public JTextArea textArea;
+    public String savedNote;
     public void newNote(){
 
     //initializing aspects of notes
     JFrame note = new JFrame("quickNote");
-    JTextArea textArea = new JTextArea(8,8);
     JPanel thePanel = new JPanel(new BorderLayout());
+    textArea = new JTextArea(8,8);
     JButton save = new JButton("Save");
     Random random = new Random();
     int colorNumber = random.nextInt(4);
@@ -64,7 +66,7 @@ public class quickNote {
     //saves what text is inside of the note that was saved
     save.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-            String savedNote = textArea.getText();
+            savedNote = textArea.getText();
             JOptionPane.showMessageDialog(null, "Saved!");
         }
     });
