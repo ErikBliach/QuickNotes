@@ -3,9 +3,12 @@ import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.Random;
+import java.awt.MouseInfo;
+import java.awt.Point;
 
 public class quickNote {
-    public JTextArea textArea;
+    //so that these could be used in the main app
+    public JTextArea textArea; 
     public String savedNote;
     public void newNote(){
 
@@ -16,9 +19,10 @@ public class quickNote {
     JButton save = new JButton("Save");
     Random random = new Random();
     int colorNumber = random.nextInt(4);
+    Point location = MouseInfo.getPointerInfo().getLocation(); //gets location of mouse
     colorNumber += 1;
 
-    Color noteColorOne = new Color(245, 245, 149);
+    Color noteColorOne = new Color(245, 245, 149); 
     Color buttonColorOne = new Color(239, 235, 106);
 
     Color noteColorTwo = new Color(162, 234, 255);
@@ -35,6 +39,8 @@ public class quickNote {
     note.setResizable(false);
     note.setSize(200, 193);
     note.setVisible(true);
+    note.setAlwaysOnTop(true);
+    note.setLocation(location);//opens note right next to the mouse
 
     //layout configurations for panel that holds area for text and save note button
     thePanel.add(save, BorderLayout.SOUTH);

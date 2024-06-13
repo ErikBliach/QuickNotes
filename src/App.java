@@ -2,7 +2,6 @@ import java.awt.BorderLayout;
 import java.awt.event.*;
 import javax.swing.*;
 
-
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -42,6 +41,7 @@ public class App {
             }
         });
 
+        //to open the note that is currently saved
         savedNoteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 newNote.newNote();
